@@ -85,7 +85,7 @@ print()
 print('*****  end section 4 ********')
 print()
 
-'''
+
 
 
 
@@ -96,6 +96,8 @@ print()
 
 for key in phonebook:
     print(key)
+    print(phonebook[key])
+
 
 
 print()
@@ -104,13 +106,15 @@ print()
 
 
 
-'''
+
 
 
 print()
 print('*****  start section 6 - iterate through values  ********')
 print()
 
+for value in phonebook.values():
+    print(value)
 
 
 
@@ -130,8 +134,12 @@ print('*****  start section 7 - iterate through both key and value pair********'
 print()
 
 
+for phonebook_tuple in phonebook.items():
+    print(phonebook_tuple)
 
-
+for key,value in phonebook.items():
+    print(key)
+    print(value)
 
 print()
 print('*****  end section 7 ********')
@@ -140,22 +148,49 @@ print()
 
 
 
+print('***** start section 8 - using get and clear ********')
+
+phone = phonebook.get('Chris', 'key not found')
+print(phone)
+
+phonebook.clear()
+print(phonebook)
+
+print('***** end section 8 ********')
 
 
 
+print('***** start section 9 - using pop method *******')
 
-print()
-print('*****  start section 8 - using random and converting to list ********')
-print()
+remove = phonebook.pop('Chris', 'not found')
+print(remove)
+
+print(phonebook)
+print('***** end section 9 ********')
 
 
+print('***** start section 10 - using popitem ********')
+#  should be random but isn't
+a = phonebook.popitem()
+print(a)
+print(phonebook)
 
-
-print()
-print('*****  end section 8 ********')
-print()
-
+print('***** end section 10 ********')
 '''
+import random
+print()
+print('*****  start section 11 - using random and converting to list ********')
+print()
+
+
+phone = phonebook[random.choice(list(phonebook))]
+
+print(phone)
+
+print()
+print('*****  end section 11 ********')
+print()
+
 
 
 
