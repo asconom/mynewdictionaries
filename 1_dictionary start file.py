@@ -2,13 +2,23 @@ phonebook = {'Chris':'555−1111',
              'Katie':'555−2222',
              'Joanne':'555−3333'}
 
+'''
 print()
 print('*****  start section 1 - print dictionary ********')
 print()
 
+print(phonebook)
+print(type(phonebook))
 
+phone = phonebook['Chris']
 
+print(phone)
 
+print(len(phonebook))
+
+mydicitionary = dict(m=8, n=9)
+
+print(mydicitionary)
 
 print()
 print('*****  end section 1 ********')
@@ -25,9 +35,12 @@ print()
 print('*****  start section 2 - search dictionary ********')
 print()
 
+name = 'Chris'
 
-
-
+if name in phonebook:
+    print(phonebook[name])
+else:
+    print(name, 'is not in the phonebook')
 
 
 print()
@@ -44,9 +57,13 @@ print()
 print('*****  start section 3 - edit/append dictionary ********')
 print()
 
+#keys are immutable: if the key does exist it will change the value, if doesnt; it will be created
+#values are mutable
+print(phonebook)
+phonebook['chris'] = '555-0123'
 
-
-
+phonebook['Chris'] = '555-4444'
+print(phonebook)
 
 print()
 print('*****  end section 3 ********')
@@ -56,20 +73,19 @@ print()
 
 
 
-
 print()
 print('*****  start section 4 - delete/remove from dictionary ********')
 print()
 
+del phonebook['Chris']
 
-
-
+print(phonebook)
 
 print()
 print('*****  end section 4 ********')
 print()
 
-
+'''
 
 
 
@@ -78,7 +94,8 @@ print()
 print('*****  start section 5 - iterate through keys ********')
 print()
 
-
+for key in phonebook:
+    print(key)
 
 
 print()
@@ -87,7 +104,7 @@ print()
 
 
 
-
+'''
 
 
 print()
@@ -138,8 +155,7 @@ print()
 print('*****  end section 8 ********')
 print()
 
-
-
+'''
 
 
 
