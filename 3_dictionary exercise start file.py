@@ -85,7 +85,6 @@ def deal_cards(deck, number):
 
     # Initialize an accumulator for the hand value.
     hand = 0
-    chosen_hand = []
 
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
@@ -96,21 +95,14 @@ def deal_cards(deck, number):
     # Deal the cards and accumulate their values.
     for card in range(number):
         chosen_card = random.choice(list(deck))
+        print(chosen_card)
         chosen_value = deck[chosen_card]
-        chosen_hand.append(chosen_card)
         deck.pop(chosen_card)
         hand += chosen_value
 
     # Display the value of the hand.
+    print()
     print(hand)
-
-    # prompt user to display what their cards were
-    choice = input("\ndo you want to see your hand?(y/n) ")
-
-    if choice.lower() == "y":
-        print()
-        for card in chosen_hand:
-            print(card)
 
 
 # Call the main function.
