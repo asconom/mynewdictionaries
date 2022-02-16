@@ -8,7 +8,7 @@ read = infile.read()
 word_count = {}
 
 #remove punctuation
-punctuation = '''!()-[]};:{'"\,<>./?@#$%^&*_~'''
+punctuation = '''!()-[]};:{"\,<>./?@#$%^&*_~'''
 for letter in read:
     if letter in punctuation:
         read = read.replace(letter, '')
