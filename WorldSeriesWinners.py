@@ -46,6 +46,6 @@ except:
     elif choice == 1904 or choice == 1994:
         print('There was no World Series in this year')
 
-    
+infile.close()    
         
 
