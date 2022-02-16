@@ -50,16 +50,24 @@ datastore = { "medical":[
 
 import csv
 
+#Create header row
+header = ['room-number', 'use', 'sq-ft', 'price']
+
+#create File object and writer
 outfile = open('retail_space.csv', 'w')
-writer = csv.writer(outfile)
+writer = csv.DictWriter(outfile, fieldnames=header)
 
-header = 'room-number,use,sq-ft,price\n'
-outfile.write(header)
+#Write to CSV File
+writer.writeheader()
 
-for row in datastore['medical']:
-  outfile.write(str(row['room-number']) + ',')
-  outfile.write(row['use'] + ',')
-  outfile.write(str(row['sq-ft']) + ',')
-  outfile.write(str(row['price']) + '\n')
+for data in datastore['medical']:
+  writer.writerow(data)
+
+#  *IGNORE* First method I tried
+#  for row in datastore['medical']:
+#   outfile.write(str(row['room-number']) + ',')
+#   outfile.write(row['use'] + ',')
+#   outfile.write(str(row['sq-ft']) + ',')
+#   outfile.write(str(row['price']) + '\n')
 
 outfile.close()
